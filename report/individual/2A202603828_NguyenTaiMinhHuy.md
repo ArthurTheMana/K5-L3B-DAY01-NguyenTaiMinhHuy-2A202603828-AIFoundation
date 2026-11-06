@@ -8,9 +8,9 @@
 
 | Tệp | Có? |
 | --- | --- |
-| [`day01_lab.ipynb`](day01_lab.ipynb) — notebook đã chạy, còn output | ☐ Chưa xác nhận tệp nộp |
-| [`lab1_report.json`](lab1_report.json) — do ô "Báo cáo cuối" sinh ra | ☐ Chưa xác nhận đã tải về |
-| [`hand_calc.jpg`](hand_calc.jpg) — ảnh tính tay có các bước | ☐ Chưa xác nhận đã chụp |
+| [`day01_lab.ipynb`](day01_lab.ipynb) — notebook đã chạy, còn output | ☐ Xác nhận tệp nộp |
+| [`lab1_report.json`](lab1_report.json) — do ô "Báo cáo cuối" sinh ra | ☐ Xác nhận đã tải về |
+| [`hand_calc.jpg`](hand_calc.jpg) — ảnh tính tay có các bước | ☐ Xác nhận đã chụp |
 
 **Kiểm tra trước khi nộp:** Đặt ba tệp trên cạnh báo cáo, bảo đảm notebook lưu output và đổi các ô ☐ thành ☑ sau khi kiểm tra thực tế.
 

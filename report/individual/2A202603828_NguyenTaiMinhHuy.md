@@ -46,9 +46,6 @@ Bảng Stress Test cho thấy BoW + Logistic Regression đạt **52% Accuracy**,
 
 ## 5. Thử thách cá nhân
 
-
-## 5. Thử thách cá nhân
-
 - **SEED và yêu cầu riêng:** 8004 – Thử thách 1: Thay đổi ngưỡng quyết định (Decision Threshold) của Logistic Regression từ 0.5 sang 0.2 và 0.8. So sánh Precision, Recall, F1 và lựa chọn ngưỡng phù hợp cho ngân hàng muốn tránh chặn nhầm tin nhắn OTP.
 
 - **Cách làm:** Mình sử dụng mô hình Logistic Regression đã huấn luyện ở Phần 1 với các trọng số `w` và `b`. Sau đó, mình dùng `predict_proba()` để lấy xác suất Spam trên tập test, lần lượt áp dụng các ngưỡng 0.2, 0.5 và 0.8. Cuối cùng, mình dùng hàm `metrics()` để tính Precision, Recall và F1 mà không cần train lại mô hình.

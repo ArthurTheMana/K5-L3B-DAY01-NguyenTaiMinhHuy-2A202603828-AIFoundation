@@ -46,12 +46,24 @@ Bảng Stress Test cho thấy BoW + Logistic Regression đạt **52% Accuracy**,
 
 ## 5. Thử thách cá nhân
 
-- **SEED và yêu cầu riêng:** [CẦN ĐIỀN ĐÚNG ĐỀ ĐƯỢC SINH THEO SEED; chưa có trong dữ liệu đã cung cấp].
-- **Cách làm:** [CẦN ĐIỀN từ phần thử thách cá nhân trong notebook].
-- **Kết quả:** [CẦN ĐIỀN kết quả chạy thực tế].
-- **Giải thích:** [CẦN ĐIỀN theo output của thử thách].
 
-Mình không tự tạo đề hoặc kết quả thử thách vì mình không còn đủ thời gian để làm.
+## 5. Thử thách cá nhân
+
+- **SEED và yêu cầu riêng:** 8004 – Thử thách 1: Thay đổi ngưỡng quyết định (Decision Threshold) của Logistic Regression từ 0.5 sang 0.2 và 0.8. So sánh Precision, Recall, F1 và lựa chọn ngưỡng phù hợp cho ngân hàng muốn tránh chặn nhầm tin nhắn OTP.
+
+- **Cách làm:** Mình sử dụng mô hình Logistic Regression đã huấn luyện ở Phần 1 với các trọng số `w` và `b`. Sau đó, mình dùng `predict_proba()` để lấy xác suất Spam trên tập test, lần lượt áp dụng các ngưỡng 0.2, 0.5 và 0.8. Cuối cùng, mình dùng hàm `metrics()` để tính Precision, Recall và F1 mà không cần train lại mô hình.
+
+- **Kết quả:**
+
+| Threshold | Precision | Recall | F1 |
+|---|---:|---:|---:|
+| 0.2 | 0.890 | 0.908 | 0.899 |
+| 0.5 | 1.000 | 0.827 | 0.905 |
+| 0.8 | 1.000 | 0.520 | 0.685 |
+
+- **Giải thích:** Khi giảm ngưỡng xuống 0.2, Recall tăng vì mô hình phát hiện được nhiều Spam hơn, nhưng Precision giảm do có thêm tin Ham bị dự đoán nhầm thành Spam. Khi tăng ngưỡng lên 0.8, Precision vẫn đạt 1.000 nhưng Recall giảm mạnh vì mô hình bỏ sót nhiều Spam.
+
+Mình lựa chọn ngưỡng 0.5 trong ba ngưỡng đã thử vì Precision đạt 100% trên tập test và F1 cao nhất (0.905). Đây là lựa chọn phù hợp hơn cho ngân hàng muốn hạn chế chặn nhầm tin OTP.
 
 ## 6. Phương án cho sản phẩm thật
 
